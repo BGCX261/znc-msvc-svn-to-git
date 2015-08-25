@@ -1,0 +1,171 @@
+#summary znc-msvc Changelog.
+#labels Featured,Phase-Support
+
+== 2012-08-22 (0.206) ==
+  * First 0.206 preview release with lots of new things, more 0.206 releases will follow.
+  * Brand-new installer, including service setup, firewall exceptions
+  * Lots of work has been put into running ZNC as a proper Windows service. The documentation is now being updated to reflect this.
+  * A very basic GUI program (ZNC_Tray.exe) to control the service has been created. This will greatly be improved upon in following 0.206 releases.
+  * All executables are now code-signed.
+  * OpenSSL is now 1.0.1c.
+  * All the upstream changes.
+  * Fixed some strftime-related crash bugs (issue 48).
+
+== 2011-11-09 (0.202r2) ==
+  * Important bugfix that prevented lots of servers from being connected to. Please refer to issue 39 and revision 339, revision 340 and revision 341 for details.
+  * Updated c-ares to git master branch version + patch by [http://c-ares.haxx.se/mail/c-ares-archive-2011-10/0001.shtml Bert Belder].
+
+== 2011-11-08 (0.202) ==
+  * Based on upstream ZNC 0.202 as released in September ([http://github.com/znc/znc/tree/znc-0.202 source], [http://en.znc.in/wiki/ChangeLog/0.202 Changelog]) - includes changes from [http://en.znc.in/wiki/ChangeLog/0.200 0.200]
+  * Updated OpenSSL to 1.0.0e
+  * Updated c-ares to 1.7.5
+  * Please report if you run into any problems!
+
+== 2011-03-30 (0.098) ==
+  * Based on upstream ZNC 0.098 as released a few days earlier ([http://github.com/znc/znc/tree/znc-0.098 source], [http://en.znc.in/wiki/ChangeLog/0.098 Changelog])
+  * Switched to new Visual C++ version, please read [http://znc-msvc.googlecode.com/files/IMPORTANT_NOTE_VC100.txt this] for instructions
+  * Updated twitter and colloquy modules
+  * Added partdetach2 module
+  * Updated OpenSSL to 1.0.0d
+  * Updated c-ares to 1.7.4
+
+== 2010-11-27 (0.097-r 2182) ==
+  * Minor fixes from Upstream
+  * Last release that runs on Windows 2000
+
+== 2010-09-05 (0.095-r 2115) ==
+  * Upstream fixed some minor things
+  * Upstream renamed "VHosts" to "BindHosts"
+  * Fixed issue 26: listeners supposed to listen using IPv4 *and* IPv6 were only listening on v6. This has been fixed for Windows Vista and later, Windows 2000, XP and Server 2003 probably remain broken.
+  * Fixed issue 29: Incorrect error message on bind() errors.
+
+== 2010-08-15 (0.094-rc1) (<font color="red">strongly recommended upgrade</font>) ==
+  * Upstream revision: 2101 (also upstream 0.094-rc1)
+  * Fixed security issue: Remote users with a valid login were able to crash ZNC (CVE-2010-2812)
+  * Added timed_perform and kicklog modules
+  * More [http://en.znc.in/wiki/ChangeLog upstream changes]
+
+== 2010-07-04 (0.093-r 2060) ==
+  * Upstream [http://en.znc.in/wiki/ChangeLog/0.092 fixed] a crash in 0.090 and a 100% CPU bug (means all changes from ZNC 0.092 are in here as well).
+  * Other [http://github.com/znc/znc/compare/501c76a4d50f1c8e7c6f4795301f9bca5f4793b7...17e7b0f4cf0b3824bae4578ee35ce7a16271d706 changes] from upstream, e.g. improved CAP support.
+  * Added three new 3rd party modules: broadcastquery, clearbuffersonmsg and ignore.
+  * Updated OpenSSL to 1.0.0a
+  * Updated c-ares to 1.7.3
+
+== 2010-06-11 (0.090) (rev 2007) ==
+  * See previous temp release
+  * See [http://en.znc.in/wiki/ChangeLog/0.090 changelog on znc.in]
+  * Made sure invalid time format strings don't crash
+
+== 2010-04-26 (0.089-r 1944) ==
+  * Upstream fixed and added like a million things, check out the changelog on znc.in
+  * Updated OpenSSL to 1.0.0
+  * Updated c-ares to 1.7.1
+
+== 2010-02-19 (0.080) (rev 1754) ==
+  * Upstream fixed some bugs, nothing too exciting compared to 0.079-r 1722.
+
+== 2010-01-27 (0.079-r 1722) ==
+  * Updated to official SVN revision 1722, lots of changes & fixes. Thanks!
+  * Updated colloquy module from [http://github.com/wired/colloquypush/raw/master/znc/colloquy.cpp here]
+  * Use c-ares DLLs instead of static libs (revision 194, credit: laszlo.tamas.szabo)
+  * Fixed fix_lagchk module
+  * Removed "qauth" module, "q" does its job
+  * Awaiting your feedback!
+
+== 2009-12-21 (0.079-r 1685) (x86 only) ==
+  * Updated to official SVN revision 1685
+  * Worked around c-ares crash bug, issue 22 for details
+
+== 2009-12-18 (0.078) ==
+  * Updated to official SVN revision 1674 (= official ZNC version [http://sourceforge.net/projects/znc/files/znc/0.078/znc-0.078-changelog.txt/view 0.078])
+  * Fixed two crash bugs in the identserver module
+  * Control + C gracefully shuts down ZNC (patch by laszlo.tamas.szabo!)
+  * znc_service: Stopping the service gracefully shuts down (patch by laszlo.tamas.szabo!)
+  * Updated OpenSSL libraries to 0.9.8l
+  * Updated c-ares library to 1.7.0
+  * Updated project files and uploaded them to SVN (laszlo.tamas.szabo, ingmar.runge), building ZNC-MSVC at home is now very [BuildingZNC easy]
+  * Made a nice build and packaging/release system. (laszlo.tamas.szabo, ingmar.runge)
+
+*Please report any problems [http://code.google.com/p/znc-msvc/source/list here] or on IRC. Thanks!*
+
+== 2009-10-31 (0.077-r 1654) ==
+  * Updated to official SVN revision 1654. Props to the ZNC team!
+  * Added twitter module, thanks flakes!
+  * Fixed issue 16 (away module crash)
+  * Fixed issue 17 (restart command not working)
+  * Created a znc_service.exe that can be used to make ZNC run as a service
+  * Added license files to the download
+
+== 2009-09-25 (0.076-r 1634) ==
+  * Matches official ZNC release 0.076
+  * Various fixes and improvements
+
+== 2009-08-31 ==
+  * Exactly the same files as the previous release, just moved the `modules/skins` folder to its proper location, `modules/webadmin/skins`.
+
+== 2009-08-25 ==
+  * Updated to official SVN revision 1613, fixing some things and speeding up /znc listavailmods. Props to the ZNC team!
+  * Removed dns module
+  * Added prowl and fix_lagchk modules, thanks flakes.
+  * First release with native x64 binaries!
+  * Fixed issue 14 (log module).
+
+== 2009-08-11 ==
+  * Updated to official SVN revision 1597, fixing quite some things. Props to the ZNC team!
+  * Removed "control" module, since send_raw does exactly the same thing.
+  * Added blockserver and clientpart modules from ~psychon. Thanks!
+
+== 2009-07-21 (<font color="red">Updating is strongly advised!</font>) ==
+  * Really fixed issue 13. The previous fix was sloppy.
+  * Updated to official SVN revision 1571 (=ZNC 0.072), fixing another security issue that also affected the Linux version.
+
+== 2009-07-20 ==
+  * Updated to official SVN revision 1568, fixing a bug that stopped "/znc get" from working (among other stuff).
+  * Added notify, qauth and dns modules from [http://en.znc.in/wiki/Category:External_Modules here].
+  * Removed uptime module since it hasn't been working (revision 56).
+  * Speeded up compilation of modules by using precompiled headers.
+  * Fixed an issue that probably stopped webadmin from working (404 messages).
+  * Fixed crash bug introduced together with c-ares (2009-07-04). Thanks CNU for noticing!
+  * Fixed security-related issue 13. Thanks to CNU again!
+
+== 2009-07-08 ==
+Updated to official SVN revision 1559, fixing IPv6 issue, adding "execute" command to perform module, bug fixes. All credit goes to the ZNC team.
+
+== 2009-07-04 ==
+Updated to official SVN revision 1555, including asynchronous DNS (ZNC will not "hang" if a server name takes a long time to resolve). All credit goes to the ZNC team.
+
+== 2009-05-29 ==
+  * Fixed --datadir (issue 8)
+  * Fixed crash on connect (issue 10)
+  * Improved version check between ZNC.dll and linked components (issue 9 and issue 11)
+  * Fixed help output to reflect the changes to the uptime status command (patch from official SVN)
+  * Implemented issue 5 (hide passwords during --makeconf)
+  * Added certauth, watch_only_detached and highlightattach modules from http://people.znc.in/~psychon/znc/modules/ ... All credit to psychon!
+
+== 2009-05-27 ==
+  * Lowered WINVER define from WinXP SP2 to Win2000 SP4 with IE6.
+  * Implemented issue 4.
+  * Updated to latest [http://znc.svn.sourceforge.net/viewvc/znc/ official SVN] (from revision 1515 to 1525)
+  * Added webadmin skins that were missing from the previous release.
+
+
+== Older Changes ==
+
+*May 21st 2009*
+    Updated to latest SVN (1515), fixed folders not being created and therefore module settings not being saved.
+
+*May 20th 2009*
+    Updated to latest SVN (1508), added fish module.
+
+*April 8th 2009*
+    Added additional modules, updated to latest SVN (1485).
+
+*March 31st 2009*
+    Fixed webadmin module and skin lists, skin change and more path-related problems.
+
+*March 29th 2009*
+    Fixed listavailmods command and OpenSSL certificate generation failure. Updated to v0.068. Fixed the rest of the modules, 38 modules from znc and znc-extra are now included in the download.
+
+*March 4th 2009*
+    Updated to latest SVN, added compatible modules from znc-extra.

@@ -1,0 +1,26 @@
+#summary ZNC-MSVC downloads
+
+= Downloads =
+
+== Current Release ==
+
+This is the current work-in-progress ZNC 1.x build for Windows:
+
+  * [http://znc-msvc.irsoft.de/downloads/znc-2014-08-10-setup.exe znc-2014-08-10-setup.exe] (includes updated OpenSSL 1.0.1i)
+
+Please note that the tray application is not considered stable or ready for production yet.
+
+Please post your feedback in the issue tracker.
+
+== "Starting the service failed. Make sure it's installed correctly." ==
+
+The GUI is not yet ready for general use - most likely the ZNC configuration is missing. You have to create a configuration file using the shortcut from the start menu, then move + rename the `%appdata%\ZNC` folder to `C:\ProgramData\ZNC\Configuration` (Windows Vista / Server 2008 and later).
+After that, ensure that the Windows Account "_LOCAL SERVICE_" has read and write permissions on the entire folder and its contents.
+
+== Source Code ==
+
+The source code repository has moved to GitHub. Please find it here: https://github.com/KiNgMaR/znc
+
+== Old Releases / Archive ==
+
+The archive is available here on Google Code: [http://code.google.com/p/znc-msvc/downloads/list?can=1&q=&sort=-uploaded Archive downloads]
